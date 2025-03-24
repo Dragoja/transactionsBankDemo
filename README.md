@@ -202,7 +202,8 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 #### fun_secrets.py
 - Stores variables and connection strings
-- File: `scripts/python/fun_secrets.py` 
+- File not provided in git
+   
 #### requirements.txt
 - Lists of dependencies.
 - File: `scripts/python/requirements.txt`
