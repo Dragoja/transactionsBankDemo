@@ -1,4 +1,4 @@
-# transactionsBankDemo
+# Transactions Bank Demo - Datawarehouse
 # Requirements
 - Microsoft SQL Server – Azure SQL Server
 - SQL Server Management Studio
