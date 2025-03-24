@@ -217,6 +217,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 ---
 
 # Data Model
-![Data Model](https://github.com/user-attachments/assets/82060715-6d9e-4e7a-a4a2-d81ea6879c03)
+![Data Model](https://github.com/user-attachments/assets/6849d8b4-394c-44b0-9793-d2f993f51a0e)
+
 
 ---
