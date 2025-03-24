@@ -4,7 +4,7 @@ import requests
 import sqlalchemy
 import pandas as pd
 from io import StringIO
-from igranje_secrets import user, pw, host, db, authorization, api_urlL, teamsOutWebhook
+from igranje_secrets import user, pw, host, db, authorization, api_url, teamsOutWebhook
 
 message = pymsteams.connectorcard(teamsOutWebhook)
 
