@@ -98,48 +98,8 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 ---
 
-# Azure SQL Server: Quick Deployment Summary
+# Azure VM with Ubuntu 24.04 and Python Configuration
 
-## 1. Deploy Azure SQL Server
-- **Create Server**: Go to Azure Portal > **Create a Resource** > **Azure SQL** > **SQL Server**. Set a **unique name**, **region**, and **admin credentials**.
-- **Networking**: Add your IP to firewall rules and enable **Allow Azure Services**.
-- **Finalize**: Review and create.
-
-## 2. Create Azure SQL Database
-- **Add Database**: Select the server, click **+ New Database**, enter a name, and choose a pricing tier.
-- **Deploy**: Configure backups and create.
-- Use **SQL Server Management Studio (SSMS)** tool to connect, manage, and query your database.
-
-# SQL Queries
-
-## Create Database and Schemas
-- Create SQL Database “Bank” and Schemas
-- File: `scripts/sql/1-Create DB.sql`
-
-## Create Table
-- Create SQL Tables on “Bank” Database
-- File: `scripts/sql/2-Create Tables.sql`
-
-## Load stg.sql
-- Create Procedure for normalizing and loading `src` to `stg`
-- File: `scripts/sql/3-Load stg.sql`
-
-## Load dwh.sql
-- Create Procedure for making `dim` and `fact` tables and loading `stg` to `dwh`
-- File: `scripts/sql/4-Load dwh.sql`
-
-## Load mart.sql
-- Create Procedure for making mart tables and loading
-- File: `scripts/sql/5-Load mart.sql`
-
-## Load EXEC all.sql
-- Create Procedure for making mart tables and loading
-- File: `scripts/sql/6-EXEC all.sql`  
----
-
-# Linux Server Setup: Azure VM with Ubuntu 24.04 and Python Configuration
-
-## Steps:
 1. **Deploy Azure VM**:
    - In Azure Portal, create a VM with:
      - **Image**: Ubuntu Server 24.04 LTS.
@@ -197,14 +157,54 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 ---
 
+# Azure SQL Server
+
+#### 1. Deploy Azure SQL Server
+- **Create Server**: Go to Azure Portal > **Create a Resource** > **Azure SQL** > **SQL Server**. Set a **unique name**, **region**, and **admin credentials**.
+- **Networking**: Add your IP to firewall rules and enable **Allow Azure Services**.
+- **Finalize**: Review and create.
+
+#### 2. Create Azure SQL Database
+- **Add Database**: Select the server, click **+ New Database**, enter a name, and choose a pricing tier.
+- **Deploy**: Configure backups and create.
+- Use **SQL Server Management Studio (SSMS)** tool to connect, manage, and query your database.
+
+# SQL Queries
+
+#### Create Database and Schemas
+- Create SQL Database “Bank” and Schemas
+- File: `scripts/sql/1-Create DB.sql`
+
+#### Create Table
+- Create SQL Tables on “Bank” Database
+- File: `scripts/sql/2-Create Tables.sql`
+
+#### Load stg.sql
+- Create Procedure for normalizing and loading `src` to `stg`
+- File: `scripts/sql/3-Load stg.sql`
+
+#### Load dwh.sql
+- Create Procedure for making `dim` and `fact` tables and loading `stg` to `dwh`
+- File: `scripts/sql/4-Load dwh.sql`
+
+#### Load mart.sql
+- Create Procedure for making mart tables and loading
+- File: `scripts/sql/5-Load mart.sql`
+
+#### Load EXEC all.sql
+- Create Procedure for making mart tables and loading
+- File: `scripts/sql/6-EXEC all.sql`
+  
+---
+
 # Python Scripts
-## main.py
+#### main.py
 - Contains main code logic.
 - File: `scripts/python/main.py`  
 
-## fun_secrets.py
+#### fun_secrets.py
 - Stores variables and connection strings
 - File: `scripts/python/fun_secrets.py` 
-## requirements.txt
+#### requirements.txt
 - Lists of dependencies.
 - File: `scripts/python/requirements.txt`
