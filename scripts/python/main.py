@@ -4,16 +4,15 @@ import requests
 import sqlalchemy
 import pandas as pd
 from io import StringIO
-from fun_secrets import user, pw, host, db, authorization, API_URL, teamsOutWebhook
+from igranje_secrets import user, pw, host, db, authorization, API_URL, teamsOutWebhook
 
 message = pymsteams.connectorcard(teamsOutWebhook)
 
 start_time = time.time()
 
 engine = sqlalchemy.create_engine(
-    'mssql+pyodbc://{0}:{1}@{2}/{3}?driver=ODBC+Driver+18+for+SQL+Server'.format(user, pw, host, db),
+    'mssql+pyodbc://{0}:{1}@{2}/{3}?driver=ODBC+Driver+17+for+SQL+Server'.format(user, pw, host, db),
     use_setinputsizes=False, fast_executemany=True)
-
 
 def get_data():
     headers = {
@@ -38,6 +37,36 @@ def load_data_to_df():
                        'Gender': 'gender',
                        'Amount': 'amount'}, inplace=True)
     return df
+
+
+def main():
+    try:
+        data_df = load_data_to_df()
+
+        with engine.connect() as conn:
+            conn.exec_driver_sql("TRUNCATE TABLE src.transactions")
+            conn.commit()
+            conn.close()
+        data_df.to_sql(con=engine, name='transactions', schema='src', if_exists='append', index=False)
+        with engine.connect() as conn:
+            conn.exec_driver_sql("""
+                                EXEC dwh.exec_all;
+                                """)
+            conn.commit()
+            conn.close()
+        time_duration = "%s seconds" % (time.time() - start_time)
+        text_pass = f'Pass - Duration: {time_duration}'
+        message.text(text_pass)
+        message.send()
+    except Exception as e:
+        test_fail = (str(f'Fail - Reason: {e}'))
+        message.text(test_fail)
+        message.send()
+        print(e)
+
+
+if __name__ == '__main__':
+    main()
 
 
 def main():
