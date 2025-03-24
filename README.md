@@ -1,4 +1,10 @@
 # Transactions Bank Demo - Datawarehouse
+
+## High Level Architecture Diagram
+![image](https://github.com/user-attachments/assets/1e2b8963-f437-40a1-84b0-55bf2282dca9)
+
+---
+
 # Requirements
 - Microsoft SQL Server – Azure SQL Server
 - SQL Server Management Studio
@@ -85,16 +91,6 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
     - Example:
       - `load_stg` → Stored procedure for loading data into the Staging layer.
       - `load_dwh` → Stored procedure for loading data into the DWH layer.
-
----
-
-# High Level Architecture Diagram
-![image](https://github.com/user-attachments/assets/1e2b8963-f437-40a1-84b0-55bf2282dca9)
-
----
-
-# Data Flow
-![Data Flow 2](https://github.com/user-attachments/assets/e1a047d1-71f8-44d7-8b4b-defab739d76c)
 
 ---
 
@@ -210,3 +206,10 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 #### requirements.txt
 - Lists of dependencies.
 - File: `scripts/python/requirements.txt`
+
+---
+
+# Data Flow
+![Data Flow 2](https://github.com/user-attachments/assets/e1a047d1-71f8-44d7-8b4b-defab739d76c)
+
+---
