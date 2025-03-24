@@ -85,7 +85,9 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
     - Example:
       - `load_stg` → Stored procedure for loading data into the Staging layer.
       - `load_dwh` → Stored procedure for loading data into the DWH layer.
-     
+
+---
+
 # High Level Architecture Diagram
 ![image](https://github.com/user-attachments/assets/1e2b8963-f437-40a1-84b0-55bf2282dca9)
 
@@ -93,6 +95,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 # Data Flow
 ![image](https://github.com/user-attachments/assets/1bcf2019-2c9c-4706-873a-8cf1c59bf879)
 
+---
 
 # Azure SQL Server: Quick Deployment Summary
 
@@ -127,6 +130,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 ## Load mart.sql
 - Create Procedure for making mart tables and loading
 
+---
 
 # Linux Server Setup: Azure VM with Ubuntu 24.04 and Python Configuration
 
@@ -186,6 +190,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
      ```
    - Save and exit the editor.
 
+---
 
 ## Python Scripts
 - `main.py`: Contains main code logic.
