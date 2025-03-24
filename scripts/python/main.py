@@ -19,7 +19,7 @@ def get_data():
         "Authorization": f"Bearer {authorization}",
         "Content-Type": "application/json"
     }
-    response = requests.get(api_url, headers=headers)
+    response = requests.get(api_url, headers=headers, verify=False)
     if response.status_code == 200:
         return response.json()
     else:
