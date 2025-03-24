@@ -11,7 +11,7 @@
 - Linux server – Ubuntu 24.04
 - Python v3.9 or above
 - Python editor - PyCharm
-- SSH client software – Maxterm
+- SSH client software – Mobaxterm
 - Git Repository
 - Postman
 - DrawIO
