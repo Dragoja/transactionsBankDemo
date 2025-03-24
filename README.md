@@ -91,6 +91,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 # High Level Architecture Diagram
 ![image](https://github.com/user-attachments/assets/1e2b8963-f437-40a1-84b0-55bf2282dca9)
 
+---
 
 # Data Flow
 ![image](https://github.com/user-attachments/assets/1bcf2019-2c9c-4706-873a-8cf1c59bf879)
@@ -113,23 +114,27 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 ## Create Database and Schemas
 - Create SQL Database “Bank” and Schemas
-- File: `1-Create DB.sql`
+- File: `scripts/sql/1-Create DB.sql`
 
 ## Create Table
 - Create SQL Tables on “Bank” Database
-- File: `2-Create Tables.sql`
+- File: `scripts/sql/2-Create Tables.sql`
 
 ## Load stg.sql
 - Create Procedure for normalizing and loading `src` to `stg`
-- File: `3-Load stg.sql`
+- File: `scripts/sql/3-Load stg.sql`
 
 ## Load dwh.sql
 - Create Procedure for making `dim` and `fact` tables and loading `stg` to `dwh`
-- File: `4-Load dwh.sql`
+- File: `scripts/sql/4-Load dwh.sql`
 
 ## Load mart.sql
 - Create Procedure for making mart tables and loading
+- File: `scripts/sql/5-Load mart.sql`
 
+## Load EXEC all.sql
+- Create Procedure for making mart tables and loading
+- File: `scripts/sql/6-EXEC all.sql`  
 ---
 
 # Linux Server Setup: Azure VM with Ubuntu 24.04 and Python Configuration
