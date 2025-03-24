@@ -4,14 +4,14 @@ import requests
 import sqlalchemy
 import pandas as pd
 from io import StringIO
-from igranje_secrets import user, pw, host, db, authorization, api_url, teamsOutWebhook
+from fun_secrets import user, pw, host, db, authorization, api_url, teamsOutWebhook
 
 message = pymsteams.connectorcard(teamsOutWebhook)
 
 start_time = time.time()
 
 engine = sqlalchemy.create_engine(
-    'mssql+pyodbc://{0}:{1}@{2}/{3}?driver=ODBC+Driver+17+for+SQL+Server'.format(user, pw, host, db),
+    'mssql+pyodbc://{0}:{1}@{2}/{3}?driver=ODBC+Driver+18+for+SQL+Server'.format(user, pw, host, db),
     use_setinputsizes=False, fast_executemany=True)
 
 def get_data():
@@ -19,7 +19,7 @@ def get_data():
         "Authorization": f"Bearer {authorization}",
         "Content-Type": "application/json"
     }
-    response = requests.get(API_URL, headers=headers)
+    response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
         return response.json()
     else:
@@ -44,10 +44,10 @@ def main():
         data_df = load_data_to_df()
 
         with engine.connect() as conn:
-            conn.exec_driver_sql("TRUNCATE TABLE src.transactions")
+            conn.exec_driver_sql("TRUNCATE TABLE src.mplus_transactions")
             conn.commit()
             conn.close()
-        data_df.to_sql(con=engine, name='transactions', schema='src', if_exists='append', index=False)
+        data_df.to_sql(con=engine, name='mplus_transactions', schema='src', if_exists='append', index=False)
         with engine.connect() as conn:
             conn.exec_driver_sql("""
                                 EXEC dwh.exec_all;
@@ -67,30 +67,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-def main():
-    try:
-        data_df = load_data_to_df()
-        with engine.connect() as conn:
-            conn.exec_driver_sql("TRUNCATE TABLE src.mplus_transactions")
-            conn.commit()
-            conn.close()
-        data_df.to_sql(con=engine, name='mplus_transactions', schema='src', if_exists='append', index=False)
-        with engine.connect() as conn:
-            conn.exec_driver_sql("""
-                                EXEC dwh.exec_all;
-                                """)
-            conn.commit()
-            conn.close()
-        message.text('Radi :)')
-        message.send()
-    except Exception as e:
-        message.text(str(e))
-        message.send()
-        print(e)
-
-
-if __name__ == '__main__':
-    main()
-    print("--- %s seconds ---" % (time.time() - start_time))
