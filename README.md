@@ -197,8 +197,14 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 ---
 
-## Python Scripts
-- `main.py`: Contains main code logic.
-- `fun_secrets.py`: Stores variables and connection strings.
-- `requirements.txt`: Lists dependencies.
+# Python Scripts
+## main.py
+- Contains main code logic.
+- File: `scripts/python/main.py`  
 
+## fun_secrets.py
+- Stores variables and connection strings
+- File: `scripts/python/fun_secrets.py` 
+## requirements.txt
+- Lists of dependencies.
+- File: `scripts/python/requirements.txt`
