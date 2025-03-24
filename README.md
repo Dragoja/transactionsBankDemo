@@ -27,7 +27,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 ---
 
-## Naming Conventions
+# Naming Conventions
 ### Table of Contents
 1. General Principles
 2. Table Naming Conventions
@@ -86,10 +86,11 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
       - `load_stg` → Stored procedure for loading data into the Staging layer.
       - `load_dwh` → Stored procedure for loading data into the DWH layer.
      
-### High Level Architecture Diagram
+# High Level Architecture Diagram
 ![image](https://github.com/user-attachments/assets/1e2b8963-f437-40a1-84b0-55bf2282dca9)
 
-### Data Flow
+
+# Data Flow
 ![image](https://github.com/user-attachments/assets/1bcf2019-2c9c-4706-873a-8cf1c59bf879)
 
 
