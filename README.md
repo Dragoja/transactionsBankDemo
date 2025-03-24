@@ -211,6 +211,12 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 ---
 
 # Data Flow
-![Data Flow 2](https://github.com/user-attachments/assets/edf15549-5482-47e5-9b26-348dc4c8b261)
+![Data Flow](https://github.com/user-attachments/assets/2e6af3d4-085a-49ae-bead-09009585964d)
+
+
+---
+
+# Data Model
+![Data Model](https://github.com/user-attachments/assets/82060715-6d9e-4e7a-a4a2-d81ea6879c03)
 
 ---
