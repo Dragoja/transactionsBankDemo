@@ -69,7 +69,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 ---
 
-### Glossary of Category Patterns
+### Category Patterns
 | Pattern | Meaning               | Example(s)                         |
 |---------|-----------------------|-------------------------------------|
 | dim_    | Dimension table       | dim_city, dim_gender, dim_card_type |
@@ -94,9 +94,22 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 
 
 ### Azure SQL Server
-Deployment of Azure SQL Server and database
+# Azure SQL Server: Quick Deployment Summary
 
-# SQL Queries
+## 1. Deploy Azure SQL Server
+- **Create Server**: Go to Azure Portal > **Create a Resource** > **Azure SQL** > **SQL Server**. Set a **unique name**, **region**, and **admin credentials**.
+- **Networking**: Add your IP to firewall rules and enable **Allow Azure Services**.
+- **Finalize**: Review and create.
+
+## 2. Create Azure SQL Database
+- **Add Database**: Select the server, click **+ New Database**, enter a name, and choose a pricing tier.
+- **Deploy**: Configure backups and create.
+
+## Next Steps
+- Use **SQL Server Management Studio (SSMS)** or tools to connect, manage, and query your database.
+
+
+### SQL Queries
 
 ## Create Database and Schemas
 - Create SQL Database “Bank” and Schemas
@@ -116,3 +129,85 @@ Deployment of Azure SQL Server and database
 
 ## Load mart.sql
 - Create Procedure for making mart tables and loading
+
+
+### Linux Server Setup: Azure VM with Ubuntu 24.04 and Python Configuration
+
+## Steps:
+1. **Deploy Azure VM**:
+   - In Azure Portal, create a VM with:
+     - **Image**: Ubuntu Server 24.04 LTS.
+     - **Authentication**: SSH key or password.
+     - **Inbound Ports**: Enable SSH (port 22).
+   - Assign a public IP and complete setup.
+
+2. **Connect via SSH**:
+   - Use SSH client:
+     - `ssh <username>@<public_ip>`
+
+3. **Install Python and Dependencies**:
+   - Update the package list:
+     ```bash
+     sudo apt update
+     ```
+   - Install Python and `pip`:
+     ```bash
+     sudo apt install python3 python3-pip -y
+     ```
+   - Verify installation:
+     ```bash
+     python3 --version
+     pip3 --version
+     ```
+
+4. **Deploy Python Scripts**:
+   - Transfer your Python scripts to the server using `scp` or any file transfer tool:
+     ```bash
+     scp script.py <username>@<public_ip>:/path/to/destination
+     ```
+
+5. **Create `init.sh` and `main.sh` Scripts**:
+   - **`init.sh`**:
+     ```bash
+     #!/bin/bash
+     # Initialize the environment
+     python3 -m venv venv   # Create a virtual environment
+     source venv/bin/activate  # Activate it
+     pip install -r requirements.txt  # Install dependencies
+     ```
+   - **`main.sh`**:
+     ```bash
+     #!/bin/bash
+     # Run the Python script
+     source venv/bin/activate  # Activate the virtual environment
+     python3 script.py         # Execute your script
+     ```
+   - Make both scripts executable:
+     ```bash
+     chmod +x init.sh main.sh
+     ```
+
+6. **Set Up Virtual Environment**:
+   - Run the `init.sh` script to set up the environment:
+     ```bash
+     ./init.sh
+     ```
+   - Ensure all dependencies in `requirements.txt` are installed.
+
+7. **Configure Crontab**:
+   - Open the Crontab editor:
+     ```bash
+     crontab -e
+     ```
+   - Add the following line to execute `main.sh` every 10 minutes:
+     ```bash
+     */10 * * * * /path/to/main.sh
+     ```
+   - Save and exit the editor.
+
+
+## Python Scripts
+- `main.py`: Contains main code logic.
+- `fun_secrets.py`: Stores variables and connection strings.
+- `requirements.txt`: Lists dependencies.
+
