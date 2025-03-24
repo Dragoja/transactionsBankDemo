@@ -93,7 +93,6 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 ![image](https://github.com/user-attachments/assets/1bcf2019-2c9c-4706-873a-8cf1c59bf879)
 
 
-### Azure SQL Server
 # Azure SQL Server: Quick Deployment Summary
 
 ## 1. Deploy Azure SQL Server
@@ -104,10 +103,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 ## 2. Create Azure SQL Database
 - **Add Database**: Select the server, click **+ New Database**, enter a name, and choose a pricing tier.
 - **Deploy**: Configure backups and create.
-
-## Next Steps
-- Use **SQL Server Management Studio (SSMS)** or tools to connect, manage, and query your database.
-
+- Use **SQL Server Management Studio (SSMS)** tool to connect, manage, and query your database.
 
 ### SQL Queries
 
