@@ -1,0 +1,7 @@
+user = 'demoadmin'
+pw = 'NoviPass123.'
+host = 'demosqlseerver.database.windows.net:1433'
+db = 'Bank'
+authorization = 'A4b$9Nc#7Zy1Qw3'
+API_URL = 'http://65.52.154.25'
+teamsOutWebhook = 'https://trizma.webhook.office.com/webhookb2/e862cccb-f7a1-4ec6-9615-73f4e12e24c4@83f7f0f7-0989-43be-9815-3a120550cc0a/IncomingWebhook/3808b6261a1040ff823cbd2c1c2ddb66/6c26329d-41db-49b8-a929-9b5b8669c2cd/V266-KdPAc28C_nOlYFohiVPrT5xHu-RkMfK35qezA-SA1'
