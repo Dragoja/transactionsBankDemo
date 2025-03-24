@@ -169,6 +169,8 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 - **Deploy**: Configure backups and create.
 - Use **SQL Server Management Studio (SSMS)** tool to connect, manage, and query your database.
 
+---
+
 # SQL Queries
 
 #### Create Database and Schemas
