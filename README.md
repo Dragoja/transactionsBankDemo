@@ -127,7 +127,7 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
 - Create Procedure for making mart tables and loading
 
 
-### Linux Server Setup: Azure VM with Ubuntu 24.04 and Python Configuration
+# Linux Server Setup: Azure VM with Ubuntu 24.04 and Python Configuration
 
 ## Steps:
 1. **Deploy Azure VM**:
@@ -142,10 +142,6 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
      - `ssh <username>@<public_ip>`
 
 3. **Install Python and Dependencies**:
-   - Update the package list:
-     ```bash
-     sudo apt update
-     ```
    - Install Python and `pip`:
      ```bash
      sudo apt install python3 python3-pip -y
@@ -163,21 +159,9 @@ Develop a modern data warehouse using Azure SQL Server to consolidate transactio
      ```
 
 5. **Create `init.sh` and `main.sh` Scripts**:
-   - **`init.sh`**:
-     ```bash
-     #!/bin/bash
-     # Initialize the environment
-     python3 -m venv venv   # Create a virtual environment
-     source venv/bin/activate  # Activate it
-     pip install -r requirements.txt  # Install dependencies
-     ```
-   - **`main.sh`**:
-     ```bash
-     #!/bin/bash
-     # Run the Python script
-     source venv/bin/activate  # Activate the virtual environment
-     python3 script.py         # Execute your script
-     ```
+   - file: scripts/init.sh
+ install -r requirements.txt  # Install dependencies
+   - file: scripts/main.sh
    - Make both scripts executable:
      ```bash
      chmod +x init.sh main.sh
