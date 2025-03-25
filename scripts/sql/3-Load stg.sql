@@ -16,7 +16,8 @@ BEGIN
 			TRIM(exp_type) AS exp_type,
 			TRIM(gender) AS source_gender,
 			CASE WHEN UPPER(TRIM(gender)) = 'F' THEN 'Female'
-					WHEN UPPER(TRIM(gender)) = 'M' THEN 'Male'
+				WHEN UPPER(TRIM(gender)) = 'M' THEN 'Male'
+				ELSE 'n/a'
 			END AS gender,
 			amount
 		FROM [src].[mplus_transactions]
